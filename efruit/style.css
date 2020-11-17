@@ -1,0 +1,51 @@
+/* Login - Web */
+body {
+  background: url("img/frutas.png") no-repeat;
+  background-size: cover;
+}
+html, body {
+    height:100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background-card {
+  border-radius: 5px;
+  height: 810px;
+  width:800px;
+  background-color: #FFFFFF;
+}
+.centralize-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.login-text {
+  color: #FF7B01;
+  font-size: 25px;
+}
+.centralize-container form {
+  width: 65%;
+}
+.orange-button {
+  padding: 10px 41px;
+  color: #FFFFFF;
+  background: #FF7B01;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.forgot-password {
+  color: #000000;
+  font-size: 14px;
+}
+.signup-button {
+  padding: 10px 9px;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #FF7B01;
+  border-radius: 5px;
+  font-size: 16px;
+}
