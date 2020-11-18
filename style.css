@@ -1,0 +1,97 @@
+/* Login - Web */
+.login,.signup {
+  background: url("img/frutas.png") no-repeat;
+  background-size: cover;
+}
+html, body {
+  height:100%;
+}
+.navbar {
+  background-color: #FF7B01 !important;
+}
+.navbar a {
+  color: #fff !important;
+}
+.navbar .collapse {
+  justify-content: center;
+}
+.navbar .collapse li{
+  margin-left: 60px;
+  font-size: 20px;
+}
+.navbar .collapse li:nth-child(1){
+  margin-left: 0px !important;
+}
+.login .container, .signup .container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background-card {
+  border-radius: 5px;
+  height: 810px;
+  width:800px;
+  background-color: #FFFFFF;
+}
+.centralize-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.login-text {
+  color: #FF7B01;
+  font-size: 25px;
+}
+.centralize-container form {
+  width: 65%;
+}
+.orange-button {
+  padding: 10px 41px;
+  color: #FFFFFF;
+  background: #FF7B01;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.forgot-password {
+  color: #000000;
+  font-size: 14px;
+}
+.signup-button {
+  padding: 10px 9px;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #FF7B01;
+  border-radius: 5px;
+  font-size: 16px;
+}
+#carouselExampleIndicators {
+  height: 100%;
+}
+.slider-fruit {
+  height: 240px;
+  border-bottom: 1px solid #000000;
+}
+.carousel-indicators li {
+  background: #FF7B01;
+  border-radius: 50%;
+  width: 25px;
+}
+.left-slider {
+  color: #8E8E8E;
+  font-size: 55px;
+}
+.card-img-top {
+  width: 50%;
+}
+.card-link {
+  color: #FF7B01;
+  font-size: 18px;
+  text-decoration: underline;
+}
+.card-title {
+  font-size: 28px;
+}
+.card-text.price {
+  font-size: 20px;
+}
