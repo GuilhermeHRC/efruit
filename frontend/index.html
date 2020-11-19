@@ -29,26 +29,43 @@
           </div>
           <div class="row">
             <div class="col-12 centralize-container">
-                <form>
+                <form onsubmit="login(event)">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      id="email"
+                      aria-describedby="emailHelp"
+                      placeholder="email@example.com"
+                      autocomplete="username"
+                      required
+                    >
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Senha</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                    <label for="password">Senha</label>
+                    <input
+                      type="password"
+                      name="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="Senha"
+                      autocomplete="current-password"
+                      required
+                    >
                   </div>
 
-                </form>
-            </div>
-            <div class="col-12 centralize-container">
-                <a class="forgot-password" href="#"><u>Esqueci minha senha</u></a>
-            </div>
-            <div class="col-12 centralize-container mt-5">
-                <a class="orange-button" href="#">LOGIN</a>
+                  <div class="col-12 centralize-container">
+                      <a class="forgot-password" href="#"><u>Esqueci minha senha</u></a>
+                  </div>
+                  <div class="col-12 centralize-container mt-5">
+                    <button type="submit" class="btn orange-button" href="#">LOGIN</button>
+                  </div>
+              </form>
             </div>
             <div class="col-12 centralize-container mt-4">
-                <a class="signup-button" href="#">CADASTRAR-SE</a>
+              <button id="signup-button" type="button" class="btn signup-button">CADASTRAR-SE</button>
             </div>
           </div>
         </div>
@@ -56,5 +73,39 @@
       </div>
     </div>
 
+    <script>
+      window.onload = () => {
+        const user = localStorage.getItem("efruit:user");
+
+        if (user) {
+          window.location.href = "products-page.html";
+        }
+      };
+      
+      const signUpButton = document.getElementById("signup-button");
+      
+      signUpButton.onclick = (event) => {
+        window.location.href = 'signup.html';
+      };
+      
+      function login(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const users = JSON.parse(localStorage.getItem("efruit:users")) || [];
+        const user = users.find(user => user.email === email);
+      
+        if (user && user.password === password) {
+          localStorage.setItem("efruit:user", JSON.stringify({
+            email
+          }));
+          window.location.href = 'products-page.html';
+        } else {
+          alert('Usuário e/ou senha incorretos');
+        }
+      }
+    </script>
   </body>
 </html>
