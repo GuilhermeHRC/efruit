@@ -56,7 +56,7 @@
           <strong>
             Subtotal:
           </strong>
-          <strong>
+          <strong id='subtotal'>
             R$ 16,47
           </strong>
         </div>
@@ -343,18 +343,28 @@
       }, 1000);
     };
 
+    const updateSubtotal = (quantity) => {
+      const priceElement = document.getElementById('price-kg');
+      const price = parseFloat(priceElement.innerText.replace('R$', '').replace(',', '.'));
+
+      const subtotalElement = document.getElementById('subtotal');
+      subtotalElement.innerText = ('R$ ' + (price * quantity).toFixed(2)).replace('.', ',');
+    };
+
     const addQuantity = () => {
       const quantityElement = document.getElementById('quantity');
-      const quantity = parseInt(quantityElement.innerText);
-      quantityElement.innerText = quantity + 1;
+      const quantity = parseInt(quantityElement.innerText) + 1;
+      quantityElement.innerText = quantity;
+      updateSubtotal(quantity);
     };
 
     const subQuantity = () => {
       const quantityElement = document.getElementById('quantity');
-      const quantity = parseInt(quantityElement.innerText);
+      const quantity = parseInt(quantityElement.innerText) - 1;
 
-      if (quantity > 0) {
-        quantityElement.innerText = quantity - 1;
+      if (quantity >= 0) {
+        quantityElement.innerText = quantity;
+        updateSubtotal(quantity);
       }
     };
   </script>
