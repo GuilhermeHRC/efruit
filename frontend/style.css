@@ -191,6 +191,7 @@ html, body {
 }
 
 /*top bar styles*/
+
 .top-bar {
   display: flex;
   flex-direction: column;
@@ -230,11 +231,6 @@ html, body {
   padding-right: 20px;
 }
 
-.top-bar-links li a {
-  font-size: 20px;
-  color: #8E8E8E;
-}
-
 @media  (max-width: 700px) {
   .small-logo {
     padding-left: 20px;
@@ -243,4 +239,62 @@ html, body {
   .top-bar spam {
     display: none;
   }
+}
+
+/* font awesome icons customization*/
+
+.small-icon {
+  font-size: 20px;
+  color: #8E8E8E;
+} 
+
+.small-icon:hover {
+  color: #FF7B01;
+}
+
+/* admin page */
+
+.admin-main-box {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  padding: 50px;
+  border: 1px solid #BFBFBF;
+}
+
+.admin-main-box button {
+  align-self: center;
+  margin-top: 30px;
+}
+
+.admin-main-box h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.admin-search {
+  border: 0;
+  border-left: 3px solid #FF7B01;
+  border-bottom: 1px solid #BFBFBF;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.admin-list-item {
+  border-top: 1px solid #BFBFBF;
+  display: flex;
+}
+
+.admin-list-item:last-child {
+  border-bottom: 1px solid #BFBFBF;
+}
+
+.admin-list-item a:first-child {
+  flex-grow: 1;
+  align-self: center;
+  color: #000;
+}
+
+.admin-list-item a {
+  padding-right: 10px;
 }
