@@ -20,13 +20,13 @@
       <strong>Página do Produto</strong>
       <div class='product-info'>
         <img class='product-image' src='img\apple.png' alt='Apple' />
-        <strong> Maça Fuji </strong>
+        <strong id=product-name> Maça Fuji </strong>
         <div class="item-prop-container">
           <div class='align-item-prop'>
             <span>
               Preço por kilo:
             </span>
-            <span>
+            <span id='price-kg'>
               R$ 16,47
             </span>
           </div>
@@ -34,19 +34,19 @@
             <span>
               Peso estimado:
             </span>
-            <span>
+            <span id='weight'>
               300g
             </span>
           </div>
         </div>
         <div class='quantity-selector'>
-          <div style='font-weight: bolder; cursor: pointer;'>
+          <div onclick="subQuantity()" style='font-weight: bolder; cursor: pointer;'>
             -
           </div>
-          <div>
-            300g
+          <div id='quantity'>
+            1
           </div>
-          <div style='font-weight: bolder; cursor: pointer;'>
+          <div onclick="addQuantity()" style='font-weight: bolder; cursor: pointer;'>
             +
           </div>
         </div>
@@ -61,7 +61,7 @@
           </strong>
         </div>
       </div>
-      <div class='to-cart-button'>
+      <div id='add-to-cart-btn' onclick="addToCart()" class='to-cart-button'>
         ADICIONAR
       </div>
     </div>
@@ -280,6 +280,9 @@
       if (!user) {
         window.location.href = "index.html";
       }
+      else {
+        localStorage.setItem('cart', JSON.stringify({}));
+      }
     }
 
     const modalBackground = document.getElementById('modal-background');
@@ -309,7 +312,51 @@
       const body = document.getElementsByTagName('body')[0];
       body.classList.add('stop-scrolling');
     };
-  </script>
 
+    const addToCart = () => {
+      const name = document.getElementById('product-name').innerText;
+      const price = parseFloat(document.getElementById('price-kg')
+                      .innerText.replace(',', '.').replace('R$', ''));
+      const weight = parseFloat(document.getElementById('weight')
+                      .innerText.replace(/g/, ''));
+      const quantity = parseInt(document.getElementById('quantity').innerText);
+
+      const cart = JSON.parse(localStorage.cart);
+
+      if (!cart.hasOwnProperty(name)) {
+        cart[name] = {
+          "price": price,
+          "weight": weight,
+          "quantity": 0
+        };
+      }
+
+      cart[name].quantity += quantity;
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      const addToCartButton = document.getElementById('add-to-cart-btn');
+      addToCartButton.classList.add('added-to-cart');
+      addToCartButton.innerText = 'ADICIONADO';
+      setTimeout(() => {
+        addToCartButton.classList.remove('added-to-cart');
+        addToCartButton.innerText = 'ADICIONAR';
+      }, 1000);
+    };
+
+    const addQuantity = () => {
+      const quantityElement = document.getElementById('quantity');
+      const quantity = parseInt(quantityElement.innerText);
+      quantityElement.innerText = quantity + 1;
+    };
+
+    const subQuantity = () => {
+      const quantityElement = document.getElementById('quantity');
+      const quantity = parseInt(quantityElement.innerText);
+
+      if (quantity > 0) {
+        quantityElement.innerText = quantity - 1;
+      }
+    };
+  </script>
 </body>
 </html>
