@@ -13,16 +13,16 @@
 </head>
 <body>
     <div class="top-bar">
-        <spam>Frete grátis nas compras acima de R$99 | Entrega segura | Até 6x sem juros</spam>
-        <div class="top-bar-nav">
-            <h1 class="small-logo">e-fruit</h1>
-            <ul class="top-bar-links">
-                <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
-                <li><a href="#" class="small-icon">Login</a></li>
-                <li><a href="#" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
-            </ul>
-        </div>
-    </div>
+      <spam>Frete grátis nas compras acima de R$99 | Entrega segura | Até 6x sem juros</spam>
+      <div class="top-bar-nav">
+          <h1 class="small-logo">e-fruit</h1>
+          <ul class="top-bar-links">
+              <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
+              <li><span onclick='logout()' style='cursor: pointer;' class="small-icon">Logout</span></li>
+              <li><a href="#" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
+          </ul>
+      </div>
+  </div>
     <div class="admin-main-box">
         <h2>Clientes</h2>
         <input class="admin-search" type="text" name="cliente" placeholder="Cliente" />
@@ -66,5 +66,12 @@
         </ul>
         <button class=" btn orange-button">ADICIONAR PRODUTO</button>
     </div>
+    <script type="text/javascript">
+    const logout = () => {
+      delete localStorage['efruit:user'];
+      delete localStorage['cart'];
+      window.location.href = 'index.html';
+    };
+    </script>
 </body>
 </html>

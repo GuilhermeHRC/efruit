@@ -74,7 +74,7 @@
           <h1 class="small-logo">e-fruit</h1>
           <ul class="top-bar-links">
               <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
-              <li><a href="#" class="small-icon">Login</a></li>
+              <li><span onclick='logout()' style='cursor: pointer;' class="small-icon">Logout</span></li>
               <li><a href="#" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
           </ul>
       </div>
@@ -136,12 +136,24 @@
 
     </div>
     <hr>
-    <div class="row" style="height:300px">
-      <div class="col-2 d-none d-lg-block" style="border:2px solid blue">
-
-      </div>
-      <div class="offset-lg-1 col-lg-9 col-12">
+    <div
+      class="row"
+      style="height:300px; justify-content: center; align-items: center;"
+    >
+      <div class="col-lg-9 col-12">
         <div class="row mb-5 mt-4">
+          <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
+            <div class="card d-flex align-items-center" style="width: 18rem;">
+              <img class="card-img-top" src="img\apple.png" alt="Card image cap">
+              <div class="card-body text-center">
+                <h5 class="card-title">Maça Fuji</h5>
+                <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
+              </div>
+              <div class="card-body">
+                <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
+              </div>
+            </div>
+          </div>
           <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
             <div class="card d-flex align-items-center" style="width: 18rem;">
               <img class="card-img-top" src="img\apple.png" alt="Card image cap">
@@ -336,6 +348,12 @@
         quantityElement.innerText = quantity;
         updateSubtotal(quantity);
       }
+    };
+
+    const logout = () => {
+      delete localStorage['efruit:user'];
+      delete localStorage['cart'];
+      window.location.href = 'index.html';
     };
   </script>
 </body>

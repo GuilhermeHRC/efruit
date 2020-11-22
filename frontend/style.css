@@ -90,6 +90,7 @@ html, body {
   color: #FF7B01;
   font-size: 18px;
   text-decoration: underline;
+  cursor: pointer;
 }
 .card-title {
   font-size: 28px;
