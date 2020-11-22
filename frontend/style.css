@@ -28,9 +28,12 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+.signup .background-card{
+  height: 810px;
+}
 .background-card {
   border-radius: 5px;
-  height: 810px;
+  height: 700px;
   width:800px;
   background-color: #FFFFFF;
 }
@@ -235,7 +238,7 @@ html, body {
   .small-logo {
     padding-left: 20px;
     text-align: initial;
-   }
+  }
   .top-bar spam {
     display: none;
   }
@@ -298,8 +301,29 @@ html, body {
 .admin-list-item a {
   padding-right: 10px;
 }
+#carouselExampleIndicators {
+    display: flex;
+    align-items: center;
+}
 @media only screen and (max-width: 576px) {
+  form {
+    margin-top: 20px;
+  }
+  .form-group label {
+    display: none;
+  }
   .background-card {
     width: 95%;
+  }
+  .centralize-container form {
+    width: 100%;
+  }
+  .signup .background-card {
+    height: 680px;
+}
+}
+@media only screen and (max-width: 768px) {
+  .display-none-720 {
+    display: none !important;
   }
 }
