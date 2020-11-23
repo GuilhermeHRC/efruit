@@ -100,18 +100,23 @@ html, body {
 }
 
 .modal-container {
-  width: 40%;
+  width: 400px;
   height: 60%;
   background-color: white;
   position: absolute;
   z-index: 99;
   box-shadow: 1px 3px 8px #888888;
-  left: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   top: 10%;
   visibility: hidden;
   border-radius: 20px;
 }
-
+.row {
+  width: initial !important;
+}
 .modal-background {
   width: 100%;
   height: 100%;
@@ -122,7 +127,9 @@ html, body {
   z-index: 98;
   visibility: hidden;
 }
-
+.text-menu-mobile {
+  color: #707070;
+}
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
@@ -138,7 +145,7 @@ html, body {
 }
 
 .product-info {
-  width: 50%;
+  width: 300px;
   height: 60%;
   border: 1px solid #BFBFBF;
   display: flex;
@@ -146,6 +153,10 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 20px 0px;
+}
+
+.navbar.fixed-bottom {
+  background-color: #F5F5F5 !important;
 }
 
 .to-cart-button {
@@ -303,10 +314,19 @@ html, body {
   padding-right: 10px;
 }
 #carouselExampleIndicators {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 @media only screen and (max-width: 576px) {
+  .center-mobile {
+    text-align: center;
+  }
+  .only-mobile {
+    display: block !important;
+  }
+  .only-web {
+    display: none;
+  }
   form {
     margin-top: 20px;
   }
@@ -321,10 +341,21 @@ html, body {
   }
   .signup .background-card {
     height: 680px;
+  }
 }
-}
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .display-none-720 {
     display: none !important;
   }
+}
+@media only screen and (max-width: 450px) {
+  .modal-container {
+    width: 90%;
+  }
+  .product-info {
+    width: 80%;
+  }
+  .item-prop-container {
+    width: 70%;
+}
 }

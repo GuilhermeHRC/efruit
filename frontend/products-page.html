@@ -13,7 +13,24 @@
     <title>E-Fruit</title>
 </head>
 <body>
-
+  <nav class="d-none navbar fixed-bottom navbar-light bg-light only-mobile">
+    <div class="container-fluid">
+      <div class="row" style="width: 100% !important">
+        <div class="col-4 d-flex justify-content-center align-items-center flex-column">
+          <a href="#"><img src="img/home-icon.png" alt=""></a>
+          <p class="text-menu-mobile">Home</p>
+        </div>
+        <div class="text-menu-mobile col-4 d-flex justify-content-center align-items-center flex-column">
+          <a href="#"><img src="img/shop-icon.png" alt=""></a>
+          <p>Carrinho</p>
+        </div>
+        <div class="text-menu-mobile col-4 d-flex justify-content-center align-items-center flex-column">
+          <a href="#"><img src="img/profile-icon.png" alt=""></a>
+          <p>Perfil</p>
+        </div>
+      </div>
+    </div>
+  </nav>
   <div class='modal-background' id='modal-background'>
   </div>
   <div class='modal-container' id='modal'>
@@ -69,10 +86,10 @@
   </div>
 
   <div class="top-bar">
-      <spam>Frete grátis nas compras acima de R$99 | Entrega segura | Até 6x sem juros</spam>
+      <spam class="only-web">Frete grátis nas compras acima de R$99 | Entrega segura | Até 6x sem juros</spam>
       <div class="top-bar-nav">
-          <h1 class="small-logo">e-fruit</h1>
-          <ul class="top-bar-links">
+          <h1 class="small-logo center-mobile">e-fruit</h1>
+          <ul class="only-web top-bar-links">
               <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
               <li><span onclick='logout()' style='cursor: pointer;' class="small-icon">Logout</span></li>
               <li><a href="#" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
