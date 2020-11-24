@@ -429,7 +429,7 @@
       <div></div>
       <h1 class="small-logo center-mobile">e-fruit</h1>
       <ul class="only-web top-bar-links">
-        <li><a href="admin.html" class="small-icon"><i class="fa fa-user"></i></a></li>
+        <li><a id='admin-page-link' href="admin.html" class="small-icon" style='visibility: hidden;'><i class="fa fa-user"></i></a></li>
         <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
         <li><span onclick='logout()' style='cursor: pointer;' class="small-icon">Logout</span></li>
         <li><a data-toggle="modal" data-target="#cartModal" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
@@ -623,6 +623,13 @@ window.onload = function () {
   }
   else {
     localStorage.setItem('cart', JSON.stringify({}));
+  }
+
+  // test only
+  const parsedUser = JSON.parse(user);
+  if (parsedUser['email'] == 'admin@efruit.com') {
+    const adminPageBtn = document.getElementById('admin-page-link');
+    adminPageBtn.style.visibility = 'visible';
   }
 }
 
