@@ -148,6 +148,7 @@ label {
   top: 10%;
   visibility: hidden;
   border-radius: 2.0rem;
+  font-size: 1.6rem;
 }
 .row {
   width: initial !important;
@@ -219,6 +220,10 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.align-item-prop input {
+  width: 70%;
 }
 
 .item-prop-container {
