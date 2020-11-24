@@ -21,7 +21,7 @@
           <p class="text-menu-mobile">Home</p>
         </div>
         <div class="text-menu-mobile col-4 d-flex justify-content-center align-items-center flex-column">
-          <a href="#"><img src="img/shop-icon.png" alt=""></a>
+          <a data-toggle="modal" data-target="#cartModal"><img src="img/shop-icon.png" alt=""></a>
           <p>Carrinho</p>
         </div>
         <div class="text-menu-mobile col-4 d-flex justify-content-center align-items-center flex-column">
@@ -84,12 +84,124 @@
       </div>
     </div>
   </div>
+
+  <!-- Address Modal -->
+  <div class="modal fade" id="formAddress" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Endereço da entrega</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex align-items-center justify-content-center">
+            <form style="width: 90%">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-9">
+                    <label for="exampleInputEmail1">Endereço</label>
+                    <input type="email" class="form-control"  placeholder="Endereço">
+                  </div>
+                  <div class="col-3">
+                    <label for="exampleInputEmail1">Número</label>
+                    <input type="email" class="form-control"  placeholder="Número">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-6">
+                    <label for="exampleInputEmail1">Bairro</label>
+                    <input type="email" class="form-control"  placeholder="Bairro">
+                  </div>
+                  <div class="col-6">
+                    <label for="exampleInputEmail1">Complemento</label>
+                    <input type="email" class="form-control"  placeholder="Complemento">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-6">
+                    <label for="exampleInputEmail1">CEP</label>
+                    <input type="email" class="form-control"  placeholder="CEP">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                  <button type="submit" class="save-button">SALVAR CARTÃO</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Payment Modal -->
+  <div class="modal fade" id="formPayment" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Forma de pagamento</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex align-items-center justify-content-center">
+            <form style="width: 90%">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Número do cartão</label>
+                <input type="email" class="form-control"  placeholder="Número do cartão">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Nome completo (como no cartão)</label>
+                <input type="password" class="form-control" placeholder="Nome">
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-6">
+                    <label for="exampleInputEmail1">Validade</label>
+                    <input type="email" class="form-control"  placeholder="Validade">
+                  </div>
+                  <div class="col-6">
+                    <label for="exampleInputEmail1">CVV</label>
+                    <input type="email" class="form-control"  placeholder="CVV">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-6">
+                    <label for="exampleInputEmail1">CPF</label>
+                    <input type="email" class="form-control"  placeholder="CPF">
+                  </div>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                  <button type="submit" class="save-button">SALVAR CARTÃO</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Checkout Modal -->
   <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Pedido 70012312321451</h5>
+          <h5 class="modal-title"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -97,45 +209,45 @@
         <div class="modal-body">
           <div class="card" style="width: 100%;">
 
-                <div class="ml-2 mt-3 row">
-                  <div class="col-6">
-                    <p><strong>Produto</strong></p>
-                  </div>
-                  <div class="col-6">
-                    <p><strong>Preço</strong></p>
-                  </div>
-                </div>
-                <div class="ml-2 row ">
-                  <div class="col-6">
-                    <p>Maça Fuji</p>
-                  </div>
-                  <div class="col-6">
-                    <p>R$ 16,47</p>
-                  </div>
-                </div>
-                <div class="ml-2 mt-3 row">
-                  <div class="col-6">
-                    <p><strong>Quantidade</strong></p>
-                  </div>
-                  <div class="col-6">
-                    <p><strong>Total</strong></p>
-                  </div>
-                </div>
-
-              <div class="row ml-2 ">
-                <div class="col-6">
-                  <p>300g</p>
-                </div>
-                <div class="col-6">
-                  <p>R$ 4,94</p>
-                </div>
+            <div class="ml-2 mt-3 row">
+              <div class="col-6">
+                <p><strong>Produto</strong></p>
               </div>
+              <div class="col-6">
+                <p><strong>Preço</strong></p>
+              </div>
+            </div>
+            <div class="ml-2 row ">
+              <div class="col-6">
+                <p>Maça Fuji</p>
+              </div>
+              <div class="col-6">
+                <p>R$ 16,47</p>
+              </div>
+            </div>
+            <div class="ml-2 mt-3 row">
+              <div class="col-6">
+                <p><strong>Quantidade</strong></p>
+              </div>
+              <div class="col-6">
+                <p><strong>Total</strong></p>
+              </div>
+            </div>
+
+            <div class="row ml-2 ">
+              <div class="col-6">
+                <p>300g</p>
+              </div>
+              <div class="col-6">
+                <p>R$ 4,94</p>
+              </div>
+            </div>
 
 
             <div class="row mt-4">
               <div class="ml-2 col-12 d-flex flex-row">
                 <p><strong>Endereço da entrega</strong></p>
-                <a class="button-rounded ml-3">+</a>
+                <a data-toggle="modal" data-target="#formAddress" class="button-rounded ml-3">+</a>
               </div>
               <div class="ml-3 col-12">
                 <p>Rua Dr Carlos Roberto, 418</p>
@@ -147,7 +259,7 @@
             <div class="row mt-2">
               <div class="ml-4 col-12 d-flex flex-row">
                 <p><strong>Forma de pagamento</strong></p>
-                <a class="button-rounded ml-3">+</a>
+                <a data-toggle="modal" data-target="#formPayment" class="button-rounded ml-3">+</a>
               </div>
               <div class="ml-3 col-12">
                 <p>Cartão de crédito</p>
@@ -383,123 +495,123 @@
     </div>
     <hr>
     <div
-      id="products-list"
-      class="row"
+    id="products-list"
+    class="row"
     >
-      <div class="col-lg-9 col-12">
-        <div class="row mb-5 mt-4">
-          <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center">
-              <img class="card-img-top" src="img\apple.png" alt="Card image cap">
-              <div class="card-body text-center">
-                <h5 class="card-title">Maça Fuji</h5>
-                <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
-              </div>
-              <div class="card-body">
-                <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
-              </div>
+    <div class="col-lg-9 col-12">
+      <div class="row mb-5 mt-4">
+        <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
+          <div class="card d-flex align-items-center">
+            <img class="card-img-top" src="img\apple.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Maça Fuji</h5>
+              <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
+            </div>
+            <div class="card-body">
+              <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
             </div>
           </div>
-          <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center">
-              <img class="card-img-top" src="img\apple.png" alt="Card image cap">
-              <div class="card-body text-center">
-                <h5 class="card-title">Maça Fuji</h5>
-                <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
-              </div>
-              <div class="card-body">
-                <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
-              </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
+          <div class="card d-flex align-items-center">
+            <img class="card-img-top" src="img\apple.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Maça Fuji</h5>
+              <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
+            </div>
+            <div class="card-body">
+              <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
             </div>
           </div>
-          <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center">
-              <img class="card-img-top" src="img\apple.png" alt="Card image cap">
-              <div class="card-body text-center">
-                <h5 class="card-title">Maça Fuji</h5>
-                <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
-              </div>
-              <div class="card-body">
-                <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
-              </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
+          <div class="card d-flex align-items-center">
+            <img class="card-img-top" src="img\apple.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Maça Fuji</h5>
+              <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
+            </div>
+            <div class="card-body">
+              <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
             </div>
           </div>
-          <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center">
-              <img class="card-img-top" src="img\apple.png" alt="Card image cap">
-              <div class="card-body text-center">
-                <h5 class="card-title">Maça Fuji</h5>
-                <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
-              </div>
-              <div class="card-body">
-                <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
-              </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
+          <div class="card d-flex align-items-center">
+            <img class="card-img-top" src="img\apple.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Maça Fuji</h5>
+              <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
+            </div>
+            <div class="card-body">
+              <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
             </div>
           </div>
-          <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center">
-              <img class="card-img-top" src="img\apple.png" alt="Card image cap">
-              <div class="card-body text-center">
-                <h5 class="card-title">Maça Fuji</h5>
-                <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
-              </div>
-              <div class="card-body">
-                <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
-              </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
+          <div class="card d-flex align-items-center">
+            <img class="card-img-top" src="img\apple.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Maça Fuji</h5>
+              <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
+            </div>
+            <div class="card-body">
+              <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
             </div>
           </div>
-          <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center">
-              <img class="card-img-top" src="img\apple.png" alt="Card image cap">
-              <div class="card-body text-center">
-                <h5 class="card-title">Maça Fuji</h5>
-                <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
-              </div>
-              <div class="card-body">
-                <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
-              </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
+          <div class="card d-flex align-items-center">
+            <img class="card-img-top" src="img\apple.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Maça Fuji</h5>
+              <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
+            </div>
+            <div class="card-body">
+              <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
             </div>
           </div>
-          <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center">
-              <img class="card-img-top" src="img\apple.png" alt="Card image cap">
-              <div class="card-body text-center">
-                <h5 class="card-title">Maça Fuji</h5>
-                <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
-              </div>
-              <div class="card-body">
-                <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
-              </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
+          <div class="card d-flex align-items-center">
+            <img class="card-img-top" src="img\apple.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Maça Fuji</h5>
+              <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
+            </div>
+            <div class="card-body">
+              <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
             </div>
           </div>
-          <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center">
-              <img class="card-img-top" src="img\apple.png" alt="Card image cap">
-              <div class="card-body text-center">
-                <h5 class="card-title">Maça Fuji</h5>
-                <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
-              </div>
-              <div class="card-body">
-                <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
-              </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
+          <div class="card d-flex align-items-center">
+            <img class="card-img-top" src="img\apple.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Maça Fuji</h5>
+              <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
+            </div>
+            <div class="card-body">
+              <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
             </div>
           </div>
-          <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center">
-              <img class="card-img-top" src="img\apple.png" alt="Card image cap">
-              <div class="card-body text-center">
-                <h5 class="card-title">Maça Fuji</h5>
-                <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
-              </div>
-              <div class="card-body">
-                <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
-              </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
+          <div class="card d-flex align-items-center">
+            <img class="card-img-top" src="img\apple.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Maça Fuji</h5>
+              <p class="card-text price mt-4"><strong>R$ 1,98/Kg</strong><br>Compra a cada 500g</p>
+            </div>
+            <div class="card-body">
+              <strong><p onclick="openProductInfoModal()" class="card-link">ADICIONAR AO CARRINHO</p></strong>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <script>
@@ -515,8 +627,25 @@ window.onload = function () {
 }
 
 $('button[data-target="#checkoutModal"]').on("click", function() {
-  console.log($('#checkoutModal'));
-    $('#cartModal').modal('hide');
+  $('#cartModal').modal('hide');
+});
+
+$('a[data-target="#formPayment"]').on("click", function() {
+  $('#checkoutModal').modal('hide');
+});
+$('a[data-target="#formAddress"]').on("click", function() {
+  $('#checkoutModal').modal('hide');
+});
+$('#formPayment .save-button').on("click", function() {
+  $('#checkoutModal').modal('show');
+  $('#formPayment').modal('hide');
+});
+$('#formAddress .save-button').on("click", function() {
+  $('#checkoutModal').modal('show');
+  $('#formAddress').modal('hide');
+});
+$('.purchase').on("click", function() {
+  $('#checkoutModal').modal('hide');
 });
 
 const modalBackground = document.getElementById('modal-background');

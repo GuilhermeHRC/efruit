@@ -156,10 +156,21 @@ label {
 .button-rounded {
   background-color: #FF7B01;
   color: #FFFFFF;
-  border-radius: 50%;
-  width: 40px;
+  border-radius: 71%;
+  height: 25px;
+  width: 25px;
   text-align: center;
-  font-size: 24px;
+  font-size: 16px;
+}
+#formPayment, #formAddress {
+  margin-top: 200px;
+}
+.save-button {
+  padding: 10px 41px;
+  background-color: #FF7B01;
+  color: #FFFFFF;
+  border: none;
+  font-size: 1.2rem;
 }
 .orange-text {
   color: #FF7B01;
@@ -275,6 +286,7 @@ label {
   align-items: center;
   padding: 1.0rem;
   background: #F5F5F5;
+  height: 75px;
 }
 
 .top-bar spam {
@@ -320,7 +332,8 @@ label {
     padding-left: 2.0rem;
     text-align: initial;
     padding-left: 2.0rem;
-    left: 20%;
+    left: 0;
+    right: 0;
   }
   .top-bar spam {
     display: none;
