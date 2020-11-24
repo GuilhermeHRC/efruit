@@ -153,6 +153,24 @@ label {
 .row {
   width: initial !important;
 }
+.button-rounded {
+  background-color: #FF7B01;
+  color: #FFFFFF;
+  border-radius: 50%;
+  width: 40px;
+  text-align: center;
+  font-size: 24px;
+}
+.orange-text {
+  color: #FF7B01;
+}
+.purchase {
+  background: #FF7B01;
+  border: none;
+  color: #FFFFFF;
+  padding: 4px 29px;
+  border-radius: 7px;
+}
 .modal-background {
   width: 100%;
   height: 100%;
@@ -194,7 +212,9 @@ label {
 .navbar.fixed-bottom {
   background-color: #F5F5F5 !important;
 }
-
+.bold {
+  font-weight: bolder;
+}
 .to-cart-button {
   width: 12.5rem;
   height: 4.0rem;
@@ -408,5 +428,5 @@ label {
   }
   .item-prop-container {
     width: 70%;
-}
+  }
 }
