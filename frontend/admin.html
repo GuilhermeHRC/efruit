@@ -12,66 +12,153 @@
     <title>E-Fruit</title>
 </head>
 <body>
-    <div class="top-bar">
-      <spam>Frete grátis nas compras acima de R$99 | Entrega segura | Até 6x sem juros</spam>
-      <div class="top-bar-nav">
-          <h1 class="small-logo">e-fruit</h1>
-          <ul class="top-bar-links">
-              <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
-              <li><span onclick='logout()' style='cursor: pointer;' class="small-icon">Logout</span></li>
-              <li><a href="#" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
-          </ul>
+
+  <!--Modal Cliente-->
+  <div class='modal-background' id='modal-background'></div>
+  <div class='modal-container' id='modal-client'>
+    <div class='product-container'>
+      <div class='product-info'>
+        <img class='product-image' src='img\avatar.png' alt='Apple' />
+        <strong id=product-name> Cliente 1 </strong>
+        <div class="item-prop-container">
+          <div class='align-item-prop'>
+            <span>Nome Completo</span>
+            <span>Cliente 1</span>
+          </div>
+          <div class='align-item-prop'>
+            <span>Email</span>
+            <span>cliente1@dominio.com</span>
+          </div>
+          <div class='align-item-prop'>
+            <span>Telefone</span>
+            <span>(12) 34567890</span>
+          </div>
+        </div>
       </div>
-  </div>
-    <div class="admin-main-box">
-        <h2>Clientes</h2>
-        <input class="admin-search" type="text" name="cliente" placeholder="Cliente" />
-        <ul>
-          <!--Temporário antes de integrar com backend-->
-          <li class="admin-list-item">
-            <a href="#">Cliente 1</a>
-            <a href="#" class="small-icon"><i class="fa fa-eye"></i></a>
-            <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
-          </li>
-          <li class="admin-list-item">
-            <a href="#">Cliente 2</a>
-            <a href="#" class="small-icon"><i class="fa fa-eye"></i></a>
-            <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
-          </li>
-          <li class="admin-list-item">
-            <a href="#">Cliente 3</a>
-            <a href="#" class="small-icon"><i class="fa fa-eye"></i></a>
-            <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
-          </li>
-        </ul>
-        <h2>Produtos</h2>
-        <input class="admin-search" type="text" name="produto" placeholder="Produto" />
-        <ul class="admin-list">
-          <!--Temporário antes de integrar com backend-->
-          <li class="admin-list-item">
-            <a href="#">Produto 1</a>
-            <a href="#" class="small-icon"><i class="fa fa-eye"></i></a>
-            <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
-          </li>
-          <li class="admin-list-item">
-            <a href="#">Produto 2</a>
-            <a href="#" class="small-icon"><i class="fa fa-eye"></i></a>
-            <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
-          </li>
-          <li class="admin-list-item">
-            <a href="#">Produto 3</a>
-            <a href="#" class="small-icon"><i class="fa fa-eye"></i></a>
-            <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
-          </li>
-        </ul>
-        <button class=" btn orange-button">ADICIONAR PRODUTO</button>
     </div>
-    <script type="text/javascript">
+  </div>
+
+  <!--Modal Produto-->
+  <div class='modal-background' id='modal-background'></div>
+  <div class='modal-container' id='modal-product'>
+    <div class='product-container'>
+      <div class='product-info'>
+        <img class='product-image' src='img\apple.png' alt='Apple' />
+        <strong id=product-name> Maça Fuji </strong>
+        <div class="item-prop-container">
+          <div class='align-item-prop'>
+            <span>Preço por kilo:</span>
+            <input type="number" value="16.47" />
+            <span>R$</span>
+          </div>
+          <div class='align-item-prop'>
+            <span>Peso estimado por item:</span>
+            <input type="number" value="300" />
+            <span>g</span>
+          </div>
+        </div>
+      </div>
+      <button class="btn orange-button">ATUALIZAR PRODUTO</button>
+    </div>
+  </div>
+
+  <div class="top-bar">
+    <spam>Frete grátis nas compras acima de R$99 | Entrega segura | Até 6x sem juros</spam>
+    <div class="top-bar-nav">
+      <a href="products-page.html" class="small-icon top-bar-back"><i class="fa fa-arrow-left"></i> Voltar</a>
+      <h1 class="small-logo">e-fruit</h1>
+      <ul class="top-bar-links">
+        <li><a href="admin.html" class="small-icon"><i class="fa fa-user"></i></a></li>
+        <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
+        <li><span onclick='logout()' style='cursor: pointer;' class="small-icon">Logout</span></li>
+        <li><a href="#" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!--Conteúdo principal-->
+  <div class="admin-main-box">
+    <h2>Clientes</h2>
+    <input class="admin-search" type="text" name="cliente" placeholder="Cliente" />
+    <ul>
+      <!--Temporário antes de integrar com backend-->
+      <li class="admin-list-item">
+        <a href="#">Cliente 1</a>
+        <a href="#" onClick="openModal('client')" class="small-icon"><i class="fa fa-eye"></i></a>
+        <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
+      </li>
+      <li class="admin-list-item">
+        <a href="#">Cliente 2</a>
+        <a href="#" onClick="openModal('client')" class="small-icon"><i class="fa fa-eye"></i></a>
+        <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
+      </li>
+      <li class="admin-list-item">
+        <a href="#">Cliente 3</a>
+        <a href="#" onClick="openModal('client')" class="small-icon"><i class="fa fa-eye"></i></a>
+        <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
+      </li>
+    </ul>
+    <h2>Produtos</h2>
+    <input class="admin-search" type="text" name="produto" placeholder="Produto" />
+    <ul class="admin-list">
+      <!--Temporário antes de integrar com backend-->
+      <li class="admin-list-item">
+        <a href="#">Produto 1</a>
+        <a href="#" onClick="openModal('product')" class="small-icon"><i class="fa fa-eye"></i></a>
+        <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
+      </li>
+      <li class="admin-list-item">
+        <a href="#">Produto 2</a>
+        <a href="#" onClick="openModal('product')" class="small-icon"><i class="fa fa-eye"></i></a>
+        <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
+      </li>
+      <li class="admin-list-item">
+        <a href="#">Produto 3</a>
+        <a href="#" onClick="openModal('product')" class="small-icon"><i class="fa fa-eye"></i></a>
+        <a href="#" class="small-icon"><i class="fa fa-trash"></i></a>
+      </li>
+    </ul>
+    <button class="btn orange-button">ADICIONAR PRODUTO</button>
+  </div>
+  <script type="text/javascript">
     const logout = () => {
       delete localStorage['efruit:user'];
       delete localStorage['cart'];
       window.location.href = 'index.html';
     };
-    </script>
+
+    const modalBackground = document.getElementById('modal-background');
+    modalBackground.onclick = (e) => {
+      e.preventDefault();
+
+      const body = document.getElementsByTagName('body')[0];
+      body.classList.remove('stop-scrolling');
+
+      const modalBackground = document.getElementById('modal-background');
+      const modalProduct = document.getElementById('modal-product');
+      const modalClient = document.getElementById('modal-client');
+
+      modalBackground.style.visibility = 'hidden';
+      modalProduct.style.visibility = 'hidden';
+      modalClient.style.visibility = 'hidden';
+    };
+
+    const openModal = (type) => {
+
+      const modalBackground = document.getElementById('modal-background');
+      const modal = type === 'product' ?
+        document.getElementById('modal-product') :
+        document.getElementById('modal-client');
+
+      modalBackground.style.visibility = 'visible';
+      modal.style.visibility = 'visible';
+
+      document.documentElement.scrollTop = 0;
+
+      const body = document.getElementsByTagName('body')[0];
+      body.classList.add('stop-scrolling');
+    };
+
+  </script>
 </body>
 </html>
