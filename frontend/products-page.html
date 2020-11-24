@@ -15,7 +15,7 @@
 <body>
   <nav class="d-none navbar fixed-bottom navbar-light bg-light only-mobile">
     <div class="container-fluid">
-      <div class="row" style="width: 100% !important">
+      <div class="row">
         <div class="col-4 d-flex justify-content-center align-items-center flex-column">
           <a href="#"><img src="img/home-icon.png" alt=""></a>
           <p class="text-menu-mobile">Home</p>
@@ -58,13 +58,13 @@
           </div>
         </div>
         <div class='quantity-selector'>
-          <div onclick="subQuantity()" style='font-weight: bolder; cursor: pointer;'>
+          <div onclick="subQuantity()">
             -
           </div>
           <div id='quantity'>
             1
           </div>
-          <div onclick="addQuantity()" style='font-weight: bolder; cursor: pointer;'>
+          <div onclick="addQuantity()">
             +
           </div>
         </div>
@@ -91,7 +91,7 @@
           <h1 class="small-logo center-mobile">e-fruit</h1>
           <ul class="only-web top-bar-links">
               <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
-              <li><span onclick='logout()' style='cursor: pointer;' class="small-icon">Logout</span></li>
+              <li><span id="logout-button" onclick='logout()' class="small-icon">Logout</span></li>
               <li><a href="#" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
           </ul>
       </div>
@@ -122,7 +122,7 @@
   </nav>
   <div class="container-fluid ">
     <div class="row slider-fruit">
-      <div class="display-none-720 col-4 d-flex justify-content-center align-items-center" style="line-height: 50px;flex-direction:column;">
+      <div class="display-none-720 col-4 d-flex justify-content-center align-items-center">
         <p class="left-slider">E-FRUIT</p>
         <p class="left-slider">FRIDAY</p>
       </div>
@@ -146,21 +146,21 @@
           </div>
         </div>
       </div>
-      <div class="display-none-720 col-4 d-flex justify-content-center align-items-center flex-column" style="line-height: 30px;">
+      <div class="display-none-720 col-4 d-flex justify-content-center align-items-center flex-column">
         <p class="left-slider">50%</p>
-        <p class="text-center" style="font-size:22px;color: #8E8E8E;">EM TODAS AS<br>FRUTAS VERMELHAS</p>
+        <p class="text-center">EM TODAS AS<br>FRUTAS VERMELHAS</p>
       </div>
 
     </div>
     <hr>
     <div
+      id="products-list"
       class="row"
-      style="height:300px; justify-content: center; align-items: center;"
     >
       <div class="col-lg-9 col-12">
         <div class="row mb-5 mt-4">
           <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center" style="width: 18rem;">
+            <div class="card d-flex align-items-center">
               <img class="card-img-top" src="img\apple.png" alt="Card image cap">
               <div class="card-body text-center">
                 <h5 class="card-title">Maça Fuji</h5>
@@ -172,7 +172,7 @@
             </div>
           </div>
           <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center" style="width: 18rem;">
+            <div class="card d-flex align-items-center">
               <img class="card-img-top" src="img\apple.png" alt="Card image cap">
               <div class="card-body text-center">
                 <h5 class="card-title">Maça Fuji</h5>
@@ -184,7 +184,7 @@
             </div>
           </div>
           <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center" style="width: 18rem;">
+            <div class="card d-flex align-items-center">
               <img class="card-img-top" src="img\apple.png" alt="Card image cap">
               <div class="card-body text-center">
                 <h5 class="card-title">Maça Fuji</h5>
@@ -196,7 +196,7 @@
             </div>
           </div>
           <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center" style="width: 18rem;">
+            <div class="card d-flex align-items-center">
               <img class="card-img-top" src="img\apple.png" alt="Card image cap">
               <div class="card-body text-center">
                 <h5 class="card-title">Maça Fuji</h5>
@@ -208,7 +208,7 @@
             </div>
           </div>
           <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center" style="width: 18rem;">
+            <div class="card d-flex align-items-center">
               <img class="card-img-top" src="img\apple.png" alt="Card image cap">
               <div class="card-body text-center">
                 <h5 class="card-title">Maça Fuji</h5>
@@ -220,7 +220,7 @@
             </div>
           </div>
           <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center" style="width: 18rem;">
+            <div class="card d-flex align-items-center">
               <img class="card-img-top" src="img\apple.png" alt="Card image cap">
               <div class="card-body text-center">
                 <h5 class="card-title">Maça Fuji</h5>
@@ -232,7 +232,7 @@
             </div>
           </div>
           <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center" style="width: 18rem;">
+            <div class="card d-flex align-items-center">
               <img class="card-img-top" src="img\apple.png" alt="Card image cap">
               <div class="card-body text-center">
                 <h5 class="card-title">Maça Fuji</h5>
@@ -244,7 +244,7 @@
             </div>
           </div>
           <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center" style="width: 18rem;">
+            <div class="card d-flex align-items-center">
               <img class="card-img-top" src="img\apple.png" alt="Card image cap">
               <div class="card-body text-center">
                 <h5 class="card-title">Maça Fuji</h5>
@@ -256,7 +256,7 @@
             </div>
           </div>
           <div class="col-xl-4 col-sm-6 col-12 flex-row d-flex align-items-center justify-content-around mt-5">
-            <div class="card d-flex align-items-center" style="width: 18rem;">
+            <div class="card d-flex align-items-center">
               <img class="card-img-top" src="img\apple.png" alt="Card image cap">
               <div class="card-body text-center">
                 <h5 class="card-title">Maça Fuji</h5>
