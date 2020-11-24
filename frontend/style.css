@@ -186,6 +186,10 @@ html, body {
   align-items: center;
 }
 
+.align-item-prop input {
+  width: 70%;
+}
+
 .item-prop-container {
   width: 50%;
 }
