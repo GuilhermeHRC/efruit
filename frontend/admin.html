@@ -12,17 +12,6 @@
     <title>E-Fruit</title>
 </head>
 <body>
-    <div class="top-bar">
-      <spam>Frete grátis nas compras acima de R$99 | Entrega segura | Até 6x sem juros</spam>
-      <div class="top-bar-nav">
-          <h1 class="small-logo">e-fruit</h1>
-          <ul class="top-bar-links">
-              <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
-              <li><span id="logout-button" onclick='logout()' class="small-icon">Logout</span></li>
-              <li><a href="#" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
-          </ul>
-      </div>
-    </div>
 
   <!--Modal Cliente-->
   <div class='modal-background' id='modal-background'></div>
@@ -70,6 +59,20 @@
         </div>
       </div>
       <button class="btn orange-button">ATUALIZAR PRODUTO</button>
+    </div>
+  </div>
+
+  <div class="top-bar">
+    <spam>Frete grátis nas compras acima de R$99 | Entrega segura | Até 6x sem juros</spam>
+    <div class="top-bar-nav">
+      <a href="products-page.html" class="small-icon top-bar-back"><i class="fa fa-arrow-left"></i> Voltar</a>
+      <h1 class="small-logo">e-fruit</h1>
+      <ul class="top-bar-links">
+        <li><a href="admin.html" class="small-icon"><i class="fa fa-user"></i></a></li>
+        <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
+        <li><span onclick='logout()' style='cursor: pointer;' class="small-icon">Logout</span></li>
+        <li><a href="#" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
+      </ul>
     </div>
   </div>
 

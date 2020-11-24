@@ -266,6 +266,7 @@ label {
 .top-bar-nav {
   display: flex;
   width: 100%;
+  justify-content: space-between;
 }
 
 .small-logo {
@@ -273,15 +274,17 @@ label {
   font-size: 2.4rem;
   text-transform: uppercase;
   color: #FF7B01;
-  flex-grow: 1;
-  text-align: center;
-  padding-left: 20.0rem;
+  position: absolute;
+  left: 50%;
 }
 
 .top-bar-links {
   display: flex;
   list-style-type: none;
-  width: 20.0rem;
+}
+
+.top-bar-back {
+  padding-left: 2.0rem;
 }
 
 .top-bar-links li {
@@ -296,6 +299,8 @@ label {
   .small-logo {
     padding-left: 2.0rem;
     text-align: initial;
+    padding-left: 2.0rem;
+    left: 20%;
   }
   .top-bar spam {
     display: none;
