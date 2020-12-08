@@ -95,7 +95,7 @@
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const response = await apiPOST('/login', {'email': email, 'password': password});
+    const response = await apiPOST('/signin', {'email': email, 'password': password});
     if (response.status) {
       localStorage.setItem("efruit:user", JSON.stringify({
         email

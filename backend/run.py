@@ -13,10 +13,48 @@ PRODUCTS = {
 }
 
 USERS = {
-    '12345': {'public': {'first_name': 'Abc', 'last_name': 'Def', 'email': 'abc@gmail.com'}, 'private': {'password': '123'}},
-    '67890': {'public': {'first_name': 'Qwe', 'last_name': 'Lmp', 'email': 'def@gmail.com'}, 'private': {'password': '123'}},
+    '12345': {
+        'public': {
+            'first_name': 'Abc',
+            'last_name': 'Def',
+            'phone': '(12) 12345-6789',
+            'email': 'abc@gmail.com'
+        },
+        'private': {
+            'password': '123'
+        }
+    },
+    '67890': {
+        'public': {
+            'first_name': 'Qwe',
+            'last_name': 'Lmp',
+            'phone': '(12) 12345-6789',
+            'email': 'def@gmail.com'
+        },
+        'private': {
+            'password': '123'
+        }
+    },
 }
 
+def generate_user_id():
+    highest_id = 0
+    for user_id in USERS:
+        uid = int(user_id)
+        if uid > highest_id:
+            highest_id = uid
+
+    return str(highest_id + 1)
+
+
+def has_unique_email(email):
+    unique = True
+    for user_id in USERS:
+        if USERS[user_id]['public']['email'] == email:
+            unique = False
+            break
+
+    return unique
 
 def get_product(product_id):
 
@@ -181,8 +219,8 @@ def manage_users():
             200 if response.get('status') else 400
 
 
-@app.route('/login', methods=['POST'])
-def login():
+@app.route('/signin', methods=['POST'])
+def signin():
 
     data = request.get_json()
 
@@ -196,6 +234,39 @@ def login():
                 status = True
 
     return json.dumps({'status': status}), 200 if status else 401
+
+
+@app.route('/signup', methods=['POST'])
+def signup():
+
+    data = request.get_json()
+
+    full_name = data.get('name')
+    email = data.get('email')
+    phone = data.get('phone')
+    password = data.get('password')
+    password_confirmation = data.get('password_confirmation')
+
+    status = False
+    if has_unique_email(email) and password == password_confirmation:
+        splitted_name = full_name.split()
+        first_name = splitted_name[0]
+        last_name = '' if len(splitted_name) < 2 else splitted_name[-1]
+        user_id = generate_user_id()
+        status = True
+        USERS[user_id] = {
+            'public': {
+                'first_name': first_name,
+                'last_name': last_name,
+                'email': email,
+                'phone': phone
+            },
+            'private': {
+                'password': password
+            }
+        }
+
+    return json.dumps({'status': True}), 200 if status else 400
 
 
 if __name__ == '__main__':
