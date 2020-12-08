@@ -1,9 +1,11 @@
 import json
 
 from flask import Flask, request
+from flask_cors import CORS, cross_origin
 
 
 app = Flask(__name__)
+cors = CORS(app)
 
 PRODUCTS = {
     '12345': {'name': 'Maçã', 'description': 'Maçã muito boa', 'price': 2.50},
@@ -177,6 +179,23 @@ def manage_users():
 
     return json.dumps(response, ensure_ascii=False), \
             200 if response.get('status') else 400
+
+
+@app.route('/login', methods=['POST'])
+def login():
+
+    data = request.get_json()
+
+    email = data.get('email')
+    password = data.get('password')
+
+    status = False
+    for user_id in USERS: 
+        if (USERS[user_id]['public']['email'] == email and \
+            USERS[user_id]['private']['password'] == password):
+                status = True
+
+    return json.dumps({'status': status}), 200 if status else 401
 
 
 if __name__ == '__main__':
