@@ -8,8 +8,8 @@ app = Flask(__name__)
 cors = CORS(app)
 
 PRODUCTS = {
-    '12345': {'name': 'Maçã', 'description': 'Maçã muito boa', 'price': 2.50},
-    '67890': {'name': 'Laranja', 'description': 'Laranja muito boa', 'price': 3.50}
+    '12345': {'name': 'Maçã', 'image': 'img/apple.png', 'description': 'Maçã muito boa', 'price': 2.50},
+    '67890': {'name': 'Laranja', 'image': 'img/apple.png', 'description': 'Laranja muito boa', 'price': 3.50}
 }
 
 USERS = {
