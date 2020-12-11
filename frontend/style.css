@@ -1,5 +1,13 @@
 :root {
   font-size: 62.5%;
+  --primary: #FF7B01;
+  --secundary: #F5F5F5;
+  --white: #FFF;
+  --grey: #8E8E8E;
+}
+
+body {
+  background-color: var(--white);
 }
 
 /* Login - Web */
@@ -22,10 +30,10 @@ label {
 }
 
 .navbar {
-  background-color: #FF7B01 !important;
+  background-color: var(--primary) !important;
 }
 .navbar a {
-  color: #fff !important;
+  color: var(--white) !important;
 }
 .navbar .collapse {
   justify-content: center;
@@ -58,7 +66,7 @@ label {
   border-radius: .5rem;
   height: 70.0rem;
   width:80.0rem;
-  background-color: #FFFFFF;
+  background-color: var(--white);
 }
 .centralize-container {
   display: flex;
@@ -66,7 +74,7 @@ label {
   align-items: flex-start;
 }
 .login-text {
-  color: #FF7B01;
+  color: var(--primary);
   font-size: 2.5rem;
 }
 .centralize-container form {
@@ -74,8 +82,8 @@ label {
 }
 .orange-button {
   padding: 1.0rem 4.1rem;
-  color: #FFFFFF;
-  background: #FF7B01;
+  color: var(--white);
+  background: var(--primary);
   border-radius: .5rem;
   font-size: 1.6rem;
 }
@@ -86,8 +94,8 @@ label {
 .signup-button {
   padding: 1.0rem .9rem;
   color: #000000;
-  background: #FFFFFF;
-  border: .1rem solid #FF7B01;
+  background: var(--white);
+  border: .1rem solid var(--primary);
   border-radius: .5rem;
   font-size: 1.6rem;
 }
@@ -106,22 +114,22 @@ label {
 }
 .slider-fruit div:last-child p:last-child {
   font-size:2.2rem;
-  color: #8E8E8E;
+  color: var(--grey);
 }
 .carousel-indicators li {
-  background: #FF7B01;
+  background: var(--primary);
   border-radius: 50%;
   width: 2.5rem;
 }
 .left-slider {
-  color: #8E8E8E;
+  color: var(--grey);
   font-size: 5.5rem;
 }
 .card-img-top {
   width: 50%;
 }
 .card-link {
-  color: #FF7B01;
+  color: var(--primary);
   font-size: 1.8rem;
   text-decoration: underline;
   cursor: pointer;
@@ -174,8 +182,8 @@ label {
   width: initial !important;
 }
 .button-rounded {
-  background-color: #FF7B01;
-  color: #FFFFFF;
+  background-color: var(--primary);
+  color: var(--white);
   border-radius: 71%;
   height: 25px;
   width: 25px;
@@ -187,18 +195,18 @@ label {
 }
 .save-button {
   padding: 10px 41px;
-  background-color: #FF7B01;
-  color: #FFFFFF;
+  background-color: var(--primary);
+  color: var(--white);
   border: none;
   font-size: 1.2rem;
 }
 .orange-text {
-  color: #FF7B01;
+  color: var(--primary);
 }
 .purchase {
-  background: #FF7B01;
+  background: var(--primary);
   border: none;
-  color: #FFFFFF;
+  color: var(--white);
   padding: 4px 29px;
   border-radius: 7px;
 }
@@ -241,7 +249,7 @@ label {
 }
 
 .navbar.fixed-bottom {
-  background-color: #F5F5F5 !important;
+  background-color: var(--secundary) !important;
 }
 .bold {
   font-weight: bolder;
@@ -249,7 +257,7 @@ label {
 .to-cart-button {
   width: 12.5rem;
   height: 4.0rem;
-  background-color: #FF7B01;
+  background-color: var(--primary);
   border-radius: .8rem;
   display: flex;
   align-items: center;
@@ -305,14 +313,14 @@ label {
   flex-direction: column;
   align-items: center;
   padding: 1.0rem;
-  background: #F5F5F5;
+  background: var(--secundary);
   height: 75px;
 }
 
 .top-bar spam {
   font-size: 1.4rem;
   font-weight: 500;
-  color: #8E8E8E;
+  color: var(--grey);
 }
 
 .top-bar-nav {
@@ -325,7 +333,7 @@ label {
   /*font-family: 'Sansation';*/
   font-size: 2.4rem;
   text-transform: uppercase;
-  color: #FF7B01;
+  color: var(--primary);
   position: absolute;
   left: 50%;
 }
@@ -364,11 +372,11 @@ label {
 
 .small-icon {
   font-size: 2.0rem;
-  color: #8E8E8E;
+  color: var(--grey);
 }
 
 .small-icon:hover {
-  color: #FF7B01;
+  color: var(--primary);
 }
 
 /* admin page */
@@ -393,7 +401,7 @@ label {
 
 .admin-search {
   border: 0;
-  border-left: .3rem solid #FF7B01;
+  border-left: .3rem solid var(--primary);
   border-bottom: .1rem solid #BFBFBF;
   padding: 1.0rem;
   margin-bottom: 3.0rem;

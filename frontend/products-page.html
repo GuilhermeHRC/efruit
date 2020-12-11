@@ -434,6 +434,7 @@
         <li><a href="#" class="small-icon"><i class="fa fa-search"></i></a></li>
         <li><span onclick='logout()' style='cursor: pointer;' class="small-icon">Logout</span></li>
         <li><a data-toggle="modal" data-target="#cartModal" class="small-icon"><i class="fa fa-shopping-cart"></i></a></li>
+        <li id="adjust-contrast"><a href="#" class="small-icon"><i class="fa fa-adjust"></i></a></li>
       </ul>
     </div>
   </div>
@@ -582,6 +583,27 @@ const loadProducts = async () => {
   }
 };
 
+function handleContrast(changeValue) {
+  let isHighContrast = JSON.parse(localStorage.getItem("efruit:isHighContrast")) || false;
+
+  if (changeValue) {
+    isHighContrast = !isHighContrast;
+    localStorage.setItem("efruit:isHighContrast", isHighContrast);
+  }
+
+  if (isHighContrast) {
+    document.documentElement.style.setProperty("--primary", "#FFF");
+    document.documentElement.style.setProperty("--secundary", "#F5F5F5");
+    document.documentElement.style.setProperty("--white", "#000");
+    document.documentElement.style.setProperty("--grey", "#8E8E8E");
+  } else {
+    document.documentElement.style.setProperty("--primary", "#FF7B01");
+    document.documentElement.style.setProperty("--secundary", "#F5F5F5");
+    document.documentElement.style.setProperty("--white", "#FFF");
+    document.documentElement.style.setProperty("--grey", "#8E8E8E");
+  }
+}
+
 window.onload = function () {
   const user = localStorage.getItem("efruit:user");
 
@@ -591,6 +613,8 @@ window.onload = function () {
   else {
     localStorage.setItem('cart', JSON.stringify({}));
   }
+
+  handleContrast(false);
 
   loadProducts();
 
@@ -723,6 +747,12 @@ const logout = () => {
   delete localStorage['cart'];
   window.location.href = 'index.html';
 };
+
+const adjustContrastButton = document.getElementById("adjust-contrast");
+adjustContrastButton.onclick = () => {
+  handleContrast(true);
+}
+
 </script>
 </body>
 </html>
