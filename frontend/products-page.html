@@ -163,7 +163,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Nome completo (como no cartão)</label>
-                <input type="password" class="form-control" placeholder="Nome">
+                <input type="text" class="form-control" placeholder="Nome">
               </div>
               <div class="form-group">
                 <div class="row">
@@ -271,26 +271,26 @@
 
           <div class="row mt-3">
             <div class="col-6 centralize-container">
-              <h6>Subtotal</h6>
+              <h6 id="delivery-subtotal-message">Subtotal</h6>
             </div>
             <div class="col-6 centralize-container">
-              <h6>R$ 14,82</h6>
+              <h6 id="delivery-subtotal-value">R$ 14,82</h6>
             </div>
           </div>
           <div class="row mt-3">
             <div class="col-6 centralize-container">
-              <h6>Entrega</h6>
+              <h6 id="delivery-message">Entrega</h6>
             </div>
             <div class="col-6 centralize-container">
-              <h6>R$ 1,00</h6>
+              <h6 id="delivery-value">R$ 1,00</h6>
             </div>
           </div>
           <div class="row mt-3" style="border-top: 1px solid #e6e8ea;">
             <div class="col-6 centralize-container">
-              <h5>Total</h5>
+              <h5 id="delivery-total-message">Total</h5>
             </div>
             <div class="col-6 centralize-container">
-              <h5>R$ 15,82</h5>
+              <h5 id="delivery-total-value">R$ 15,82</h5>
             </div>
           </div>
           <div class="row mt-3">
@@ -408,16 +408,16 @@
           </div>
           <div class="row mt-3">
             <div class="col-6 centralize-container">
-              <h5>Total</h5>
+              <h5 id="cart-total-message">Total</h5>
             </div>
             <div class="col-6 centralize-container">
-              <h5>R$ 14,82</h5>
+              <h5 id="cart-total-value">R$ 14,82</h5>
             </div>
 
           </div>
           <div class="row mt-3">
             <div class="col-12 centralize-container">
-              <button data-toggle="modal" data-target="#checkoutModal" class="purchase bold" href="#">FINALIZAR COMPRA</button>
+              <button id="cart-finish-button" data-toggle="modal" data-target="#checkoutModal" class="purchase bold" href="#">FINALIZAR COMPRA</button>
             </div>
           </div>
         </div>

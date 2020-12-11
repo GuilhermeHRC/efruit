@@ -124,7 +124,7 @@ label {
 .card-title {
   font-size: 2.8rem;
 }
-.card-text.price {
+.card-text, .card-text.price {
   font-size: 2.0rem;
 }
 
@@ -149,6 +149,21 @@ label {
   visibility: hidden;
   border-radius: 2.0rem;
   font-size: 1.6rem;
+}
+.modal,
+.modal-title,
+.product-container,
+.forgot-password,
+#cart-total-message,
+#cart-total-value,
+#cart-finish-button,
+#delivery-subtotal-message,
+#delivery-subtotal-value,
+#delivery-message,
+#delivery-value,
+#delivery-total-message,
+#delivery-total-value {
+  font-size: 2.0rem;
 }
 .row {
   width: initial !important;
