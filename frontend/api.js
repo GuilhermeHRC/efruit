@@ -20,6 +20,10 @@ const apiPOST = (route, payload) => {
     return _apiRequest(route, 'POST', payload);
 };
 
+const apiUPDATE = (route, payload) => {
+    return _apiRequest(route, 'UPDATE', payload);
+};
+
 const apiGET = (route) => {
     return _apiRequest(route, 'GET', {});
 };
