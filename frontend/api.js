@@ -8,7 +8,7 @@ const _apiRequest = (route, method, payload) => {
         }
     }
 
-    if (method == 'POST') {
+    if (method == 'POST' || method == 'UPDATE') {
         options['body'] = JSON.stringify(payload);
     }
 
@@ -20,7 +20,7 @@ const apiPOST = (route, payload) => {
     return _apiRequest(route, 'POST', payload);
 };
 
-const apiUPDATE = (route, payload) => {
+const apiUPDATE = (route, payload) => { 
     return _apiRequest(route, 'UPDATE', payload);
 };
 

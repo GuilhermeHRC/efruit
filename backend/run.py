@@ -6,6 +6,7 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 PRODUCTS = {
     '12345': {'name': 'Maçã Fuji', 'image': 'img/apple.png', 'description': 'Maçã Fuji muito boa', 'price': 4.50},
@@ -36,6 +37,17 @@ USERS = {
             'password': '123'
         }
     },
+    '00000': {
+        'public': {
+            'first_name': 'Qwe',
+            'last_name': 'Lmp',
+            'phone': '(12) 12345-6789',
+            'email': 'admin@efruit.com'
+        },
+        'private': {
+            'password': '123'
+        }
+    }
 }
 
 def generate_user_id():
@@ -157,6 +169,7 @@ def add_user(user_data):
 
 
 @app.route('/product/<string:product_id>', methods=['GET', 'UPDATE', 'DELETE'])
+@cross_origin()
 def manage_product(product_id):
 
     response = {}
@@ -175,6 +188,7 @@ def manage_product(product_id):
 
 
 @app.route('/product', methods=['GET', 'POST'])
+@cross_origin()
 def manage_products():
 
     method = request.method
@@ -189,6 +203,7 @@ def manage_products():
 
 
 @app.route('/user/<string:user_id>', methods=['GET', 'UPDATE', 'DELETE'])
+@cross_origin()
 def manage_user(user_id):
 
     response = {}
@@ -207,6 +222,7 @@ def manage_user(user_id):
 
 
 @app.route('/user', methods=['GET', 'POST'])
+@cross_origin()
 def manage_users():
 
     method = request.method
@@ -221,6 +237,7 @@ def manage_users():
 
 
 @app.route('/signin', methods=['POST'])
+@cross_origin()
 def signin():
 
     data = request.get_json()
@@ -238,6 +255,7 @@ def signin():
 
 
 @app.route('/signup', methods=['POST'])
+@cross_origin()
 def signup():
 
     data = request.get_json()
@@ -268,6 +286,15 @@ def signup():
         }
 
     return json.dumps({'status': True}), 200 if status else 400
+
+
+@app.after_request
+def after_request(response):
+    header = response.headers
+    response.headers.add("Access-Control-Allow-Headers", "*")
+    response.headers.add("Access-Control-Allow-Methods", "*")
+    
+    return response
 
 
 if __name__ == '__main__':
