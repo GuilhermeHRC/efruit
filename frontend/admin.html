@@ -210,6 +210,11 @@
 
           a = document.createElement("a");
           a.classList.add("small-icon");
+	 
+	  a.onclick = () => {
+	    _apiRequest(`/product/${response.products[productId].id}`, 'DELETE');
+	    window.location.reload(true);
+	  };
           i = document.createElement("i");
           i.classList.add("fa", "fa-trash");
           a.appendChild(i);

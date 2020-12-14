@@ -9,9 +9,9 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 PRODUCTS = {
-    '12345': {'name': 'Maçã Fuji', 'image': 'img/apple.png', 'description': 'Maçã Fuji muito boa', 'price': 4.50},
-    '67890': {'name': 'Maçã Argentina', 'image': 'img/apple.png', 'description': 'Maçã Argentina muito boa', 'price': 3.50},
-    '10111': {'name': 'Maçã Gala', 'image': 'img/apple.png', 'description': 'Maçã Gala muito boa', 'price': 5.50}
+    '12345': {'id': '12345', 'name': 'Maçã Fuji', 'image': 'img/apple.png', 'description': 'Maçã Fuji muito boa', 'price': 4.50},
+    '67890': {'id': '67890', 'name': 'Maçã Argentina', 'image': 'img/apple.png', 'description': 'Maçã Argentina muito boa', 'price': 3.50},
+    '10111': {'id': '10111', 'name': 'Maçã Gala', 'image': 'img/apple.png', 'description': 'Maçã Gala muito boa', 'price': 5.50}
 }
 
 USERS = {
@@ -45,7 +45,7 @@ USERS = {
             'email': 'admin@efruit.com'
         },
         'private': {
-            'password': '123'
+            'password': '123456789'
         }
     }
 }
